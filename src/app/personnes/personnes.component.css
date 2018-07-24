@@ -1,0 +1,26 @@
+.mat-form-field {
+    font-size: 14px;
+    width: 80%;
+    margin-left: 30px;
+  }
+  button{
+      margin-left: 20px;
+  }
+  mat-row:hover{
+    background: rgb(241, 239, 239);
+    cursor: pointer; 
+  }
+ mat-cell:nth-child(6),
+mat-header-cell:nth-child(6) {
+    flex: 0 0 15%;
+}
+mat-cell:nth-child(5),
+mat-header-cell:nth-child(5) {
+    flex: 1 1 10%;
+    text-align: center;
+}
+mat-header-cell {
+    /*background: red;*/
+    font-weight: bold;
+    color: #000;
+} 

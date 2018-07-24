@@ -1,0 +1,33 @@
+<h2 mat-dialog-title align="center">Ajouter une personne</h2>
+
+<mat-dialog-content [formGroup]="form" >
+    <mat-form-field>
+        <input matInput placeholder="Nom" formControlName="nom">
+        <mat-error *ngIf="form.controls['nom'].invalid">Minimun 4 caracteres!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Prenom" formControlName="prenom">
+        <mat-error *ngIf="form.controls['prenom'].invalid">Minimun 4 caracteres!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Age" formControlName="age">
+        <mat-error *ngIf="form.controls['age'].invalid">Champ oblogatoire et age >= 10</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="E-mail" formControlName="email">
+        <mat-error *ngIf="form.controls['nom'].invalid">Entrer un e-mail valide</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Tèlèphone" formControlName="phone">
+        <mat-error *ngIf="form.controls['phone'].invalid">Minimun 8 caracteres et ne prend pas de lettre!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Pays de naissance" formControlName="pays">
+        <mat-error *ngIf="form.controls['pays'].invalid">Champ oblogatoire</mat-error>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button class="mat-raised-button mat-primary" mat-dialog-close>Annuler </button>
+  <button class="mat-raised-button mat-accent"
+    [disabled]="form.invalid" (click)="ajouter()">Valider </button>
+</mat-dialog-actions>

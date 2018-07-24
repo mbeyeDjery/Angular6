@@ -1,0 +1,50 @@
+<div>
+    <button mat-icon-button
+    (click)="ajouterPersonne()"
+    class="mat-primary mat-elevation-z2" >
+    <i class="fa fa-user-plus fa-2x" ></i>
+  </button>
+  <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrer...">
+    </mat-form-field>
+  <mat-table #myTable [dataSource]="dataSource" matSort matSortActive="id" matSortDisableClear matSortDirection="desc">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header matTooltip="Trier par ID"> ID </mat-header-cell>
+      <mat-cell *matCellDef="let personnes"> {{personnes.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="nom">
+      <mat-header-cell *matHeaderCellDef mat-sort-header matTooltip="Trier par nom"> NOM </mat-header-cell>
+      <mat-cell *matCellDef="let personnes"> {{personnes.nom}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="prenom">
+      <mat-header-cell *matHeaderCellDef> PRENOM </mat-header-cell>
+      <mat-cell *matCellDef="let personnes"> {{personnes.prenom}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="age">
+      <mat-header-cell *matHeaderCellDef mat-sort-header matTooltip="Trier par age"> AGE </mat-header-cell>
+      <mat-cell *matCellDef="let personnes"> {{personnes.age}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> EMAIL </mat-header-cell>
+      <mat-cell *matCellDef="let personnes"> {{personnes.email}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef> PHONE </mat-header-cell>
+      <mat-cell *matCellDef="let personnes"> {{personnes.phone}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="pays">
+      <mat-header-cell *matHeaderCellDef> PAYS </mat-header-cell>
+      <mat-cell *matCellDef="let personnes"> {{personnes.pays}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="colonnes;" ></mat-header-row>
+    <mat-row
+      matTooltip="Clicker pour editer"
+      *matRowDef="let rows; columns:colonnes; let ligne = index"
+      (click)="editPersonne(rows)"
+      ></mat-row>
+  </mat-table>
+  <mat-paginator
+    [pageSize]="6"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

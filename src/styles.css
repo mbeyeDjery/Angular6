@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.couleur-defaut{
+  background-color:rgb(65, 65, 182);
+  color: white;
+}
+.couleur-violet{
+  background-color:rgb(157, 44, 161);
+  color: white;
+}
+.couleur-orange{
+  background-color:rgb(189, 85, 45);
+  color: white;
+}
+.couleur-vert{
+  background-color:rgb(48, 134, 55);
+  color: white;
+}
+.font-defaut{
+  background-color: rgb(255, 255, 255);
+}
+.font-orange{
+  background-color: rgb(248, 218, 206);
+}
+.font-violet{
+  background-color: rgb(240, 210, 248);
+}
+.font-vert{
+  background-color:rgb(212, 245, 214);
+}
